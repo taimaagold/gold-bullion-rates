@@ -85,7 +85,25 @@ nav a:hover {
     padding: 6px;
     white-space: nowrap;
     font-size: 14px;
-    animation: scroll 60s linear infinite;
+    animation: scroll 40s linear infinite;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .ticker {
+        gap: 35px;
+        font-size: 13px;
+        animation: scroll 35s linear infinite;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .ticker {
+        gap: 25px;
+        font-size: 12px;
+        animation: scroll 20s linear infinite;
+    }
 }
 .ticker-wrap::before,
 .ticker-wrap::after {
