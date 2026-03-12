@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taimaa Gold Bullion Rates</title>
+<meta name="title" content="Taimaa Gold Bullion Rates" />
+<meta name="description" content="" />
+<link rel="canonical" href="https://beta7.captaininfotech.com/taimaagold.com/" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="icon" href="./logo.ico" type="image/x-icon">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    background: #181a20;
+    color: #fff;
+}
+.green {
+    color: #00ff7f;
+}
+.red {
+    color: #ff4040;
+}
+.header {
+    background: #29313d;
+    padding: 12px;
+    text-align: center;
+    font-size: 20px;
+    border-bottom: 2px solid #333;
+}
+.top-bar {
+    background-color: #29313d;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+}
+nav {
+    background-color: #1f2028;
+    padding: 15px 20px;
+    text-align: center;
+}
+nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+nav a:hover {
+    color: #fcd535;
+}
+/* Tablet */
+@media (max-width: 768px) {
+    nav {
+        padding: 12px 15px;
+    }
+    nav a {
+        margin: 0 8px;
+        font-size: 14px;
+    }
+}
+/* Mobile */
+@media (max-width: 480px) {
+    nav {
+        padding: 5px;
+    }
+    nav a {
+        /* display: block; */
+        margin: 8px;
+    }
+}
+.market {
+    padding: 6px;
+    font-size: 14px;
+    background: #29313d;
+    color: #fff;
+}
+.ticker-wrap {
+    position: relative;
+    overflow: hidden;
+}
+.ticker {
+    display: flex;
+    gap: 50px;
+    padding: 6px;
+    white-space: nowrap;
+    font-size: 14px;
+    animation: scroll 60s linear infinite;
+}
+.ticker-wrap::before,
+.ticker-wrap::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+.ticker-wrap::before {
+    left: 0;
+    background: linear-gradient(to right, #111111, transparent);
+}
+.ticker-wrap::after {
+    right: 0;
+    background: linear-gradient(to left, #111111, transparent);
+}
+@keyframes scroll {
+    0% {
+        transform: translateX(10%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 15px;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .container {
+        padding: 18px 12px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px 10px;
+    }
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #111;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: rgb(0 0 0 / 0.35) 0 5px 15px;
+}
+th {
+    background: #fcd535;
+    border: 1px solid #fcd535;
+    padding: 5px;
+    text-align: center;
+    color: #000;
+}
+td {
+    border: 1px solid #fcd43549;
+    padding: 5px;
+    text-align: center;
+}
+.flash-up {
+    background: #003b20;
+}
+.flash-down {
+    background: #4a0000;
+}
+.admin {
+    margin-top: 10px;
+    background: #29313d;
+    border: 1px solid #333;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: rgb(0 0 0 / 0.35) 0 5px 15px;
+}
+input {
+    width: 60px;
+    font-size: 14px;
+    padding: 3px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    background: #181a20;
+    color: #fff;
+}
+button {
+    padding: 6px 12px;
+    margin-left: 6px;
+    border: none;
+    border-radius: 6px;
+    background: #fcd535;
+    color: #000;
+    font-weight: 700;
+    cursor: pointer;
+}
+button:hover {
+    transform: scale(1.05);
+}
+.updated {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #aaa;
+}
+.logo {
+    max-height: 130px;
+    /* width: 100%; */
+    height: auto;
+    margin: 10px;
+}
+@media (max-width: 768px) {
+    .logo {
+        max-height: 100px;
+    }
+}
+@media (max-width: 480px) {
+    .logo {
+        max-height: 90px;
+    }
+}
+.icon {
+    width: 30px;
+    height: 30px;
+}
+.footer {
+    background-color: #29313d;
+    border: 1px solid #333;
+    margin-top: 15px;
+    border-radius: 6px;
+}
+.price {
+    font-size: 22px;
+}
+.price {
+    font-size: clamp(14px, 4vw, 22px);
+}
+.ohl {
+    font-size: 12px;
+    color: #aaa;
+}
+.topBoard {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+.card {
+    background: #111;
+    padding: 5px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: rgb(0 0 0 / 0.35) 0 5px 15px;
+}
+.title {
+    font-size: 14px;
+    color: #aaa;
+}
+@media (max-width: 768px) {
+    .title {
+        font-size: 12px;
+    }
+}
+@media (max-width: 480px) {
+    .title {
+        font-size: 10px;
+    }
+}
+.high {
+    font-size: 12px;
+    color: #00ff7f;
+}
+.form-control,
+.form-select {
+    background: #29313d;
+    color: #fff;
+    border: 1px solid #3a4352;
+    border-radius: 8px;
+    padding: 10px 14px;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+.form-control::placeholder {
+    color: #bfc6d1;
+}
+.form-control:focus,
+.form-select:focus {
+    background: #29313d;
+    border-color: #4e9cff;
+    box-shadow: 0 0 8px rgb(78 156 255 / 0.4);
+    color: #fff;
+}
+.form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M1.5 5l6.5 6 6.5-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 14px;
+}
+.form-select:hover,
+.form-control:hover {
+    border-color: #4e9cff;
+}
+.form-select option {
+    background: #29313d;
+    color: #fff;
+}
+table tr td:first-child {
+    font-size: 16px;
+    font-weight: 500;
+}
+@media (max-width: 768px) {
+    table tr td:first-child {
+        font-size: 14px;
+    }
+}
+@media (max-width: 480px) {
+    table tr td:first-child {
+        font-size: 10px;
+    }
+}
+.hl {
+    font-size: 10px !important;
+}
+h6 a 
+{
+    text-decoration: none;
+    color: #fcd535;
+}
+h6 a:hover 
+{
+    color: #d1ad1e;
+}
+.price-up{
+color:#00ff7f;
+animation:flashGreen 0.5s;
+}
+
+.price-down{
+color:#ff4040;
+animation:flashRed 0.5s;
+}
+
+/* @keyframes flashGreen{
+0%{background:#003b20;}
+100%{background:transparent;}
+}
+
+@keyframes flashRed{
+0%{background:#4a0000;}
+100%{background:transparent;}
+} */
+</style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="ticker-wrap">
+            <div class="ticker" id="ticker">Loading market...</div>
+            </div>
+    </div>
+    <div class="text-center"><img src="./logo.png" alt="logo" class="img-fluid logo"></div>
+<div class="container" id="#livepPrice">
+   <div class="row justify-content-center">
+    <div class="col-lg-4 text-start">
+    </div>
+    <div class="col-md-10 col-lg-9">
+        <div class="market market-bar mb-3">
+            <span id="marketStatus">🟡 Connecting...</span>
+            <span id="updateClock" class="float-end"></span>
+            </div>
+        <div class="topBoard row justify-content-center">
+        <div class="col-md-4 col-4">
+            <div class="card">
+            <div class="title">GOLD OZ BID</div>
+            <div id="goldBid" class="price"></div>
+            <div id="goldBidHigh" class="high"></div>
+            </div>
+        </div>
+        <div class="col-md-4 col-4">
+            <div class="card">
+            <div class="title">GOLD OZ ASK</div>
+            <div id="goldAsk" class="price"></div>
+            <div id="goldAskHigh" class="high"></div>
+            </div>
+        </div>
+        <div class="col-md-4 col-4">    
+            <div class="card">
+            <div class="title">USDINR ASK</div>
+            <div id="usdAsk" class="price"></div>
+            <div id="usdHigh" class="high"></div>
+            </div>
+        </div>   
+            </div>
+        <table>
+            <tr>
+                <th width="50%" class="text-start">METAL</th>
+                <th width="50%">PRICE</th>
+                </tr>
+                <tr>
+                    <td class="text-start">SILVER OZ</td>
+                    <td>
+                    <div id="silverOz"></div>
+                    <dic class="hl" id="silverOzHL"></dic>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td class="text-start">GOLD 1 GM</td>
+                    <td>
+                    <div id="gold1g"></div>
+                    <dic class="hl" id="gold1gHL"></dic>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td class="text-start">GOLD 995</td>
+                    <td>
+                    <div id="gold995"></div>
+                    <dic class="hl" id="gold995HL"></dic>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td class="text-start">GOLD 9999</td>
+                    <td>
+                    <div id="gold9999"></div>
+                    <dic class="hl" id="gold9999HL"></dic>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td class="text-start">GOLD TT BAR</td>
+                    <td>
+                    <div id="goldTT"></div>
+                    <div class="hl" id="goldTTHL"></div>
+                    </td>
+                    </tr>
+            </table>
+            <div class="updated d-none" id="updateTime"></div>
+    </div>
+   </div>
+</div>
+<div class="footer" id="Contact">
+   <div class="container py-2">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4 ">
+            <div class="text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="#ffffff" viewBox="0 0 384 512"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M0 188.6C0 84.4 86 0 192 0S384 84.4 384 188.6c0 119.3-120.2 262.3-170.4 316.8-11.8 12.8-31.5 12.8-43.3 0-50.2-54.5-170.4-197.5-170.4-316.8zM192 256a64 64 0 1 0 0-128 64 64 0 1 0 0 128z"/></svg>
+                <p class="my-1"><strong>Our Address</strong></p>
+                <p class="my-1"><small>M03, Fatma Gold and Diamond Center, <br> Behind Gold Land Building, Al Dhagaya, Deira - Dubai</small></p>
+                <h6 class="mt-3">
+                    Telephone: <a href="tel:+97142266118" class="tel-link">+971 4 226 6118</a>
+                </h6>
+            </div>
+        </div>
+    </div>
+   </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<script>
+function market() {
+      let h = new Date().getHours();
+      let statusEl = document.getElementById("marketStatus");
+      if (h >= 9 && h <= 23) {
+          statusEl.innerHTML = "Market Status : OPEN";
+          statusEl.style.color = "#00ff7f";
+      } else {
+          statusEl.innerHTML = "Market Status : CLOSED";
+          statusEl.style.color = "#ff4040";
+      }
+  }
+  market();
+    let prev={}
+    let highs={}
+    let lows={}
+    setInterval(() => {
+  document.getElementById("updateClock").innerHTML =
+    "Last update: " + new Date().toLocaleTimeString([], {
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+}, 1000);
+    async function getData(){
+    try{
+    let goldRes = await fetch("https://api.gold-api.com/price/XAU")
+    let goldData = await goldRes.json()
+    let silverRes = await fetch("https://api.gold-api.com/price/XAG")
+    let silverData = await silverRes.json()
+    let fxRes = await fetch("https://api.exchangerate-api.com/v4/latest/USD")
+    let fxData = await fxRes.json()
+    let gold = goldData.price
+    let silver = silverData.price
+    let usdinr = fxData.rates.INR
+    updateBoard(gold,silver,usdinr)
+    }catch(e){
+    console.log("API error",e)
+    }
+    }
+    function updateTicker(gold,silver,usdinr,gold1g,gold995,gold9999,goldTT){
+
+function tickerColor(id,val){
+let cls=""
+if(prev[id]){
+if(val>prev[id]) cls="price-up"
+else if(val<prev[id]) cls="price-down"
+}
+prev[id]=val
+return cls
+}
+
+let tickerText =
+"<span>GOLD: <span class='"+tickerColor("tgold",gold)+"'>"+gold.toFixed(2)+"</span></span>" +
+"<span>SILVER: <span class='"+tickerColor("tsilver",silver)+"'>"+silver.toFixed(2)+"</span></span>" +
+"<span>USDINR: <span class='"+tickerColor("tusd",usdinr)+"'>"+usdinr.toFixed(2)+"</span></span>" +
+"<span>GOLD 1GM: <span class='"+tickerColor("t1g",gold1g)+"'>"+gold1g.toFixed(2)+"</span></span>" +
+"<span>GOLD 995: <span class='"+tickerColor("t995",gold995)+"'>"+gold995.toFixed(2)+"</span></span>" +
+"<span>GOLD 9999: <span class='"+tickerColor("t9999",gold9999)+"'>"+gold9999.toFixed(2)+"</span></span>" +
+"<span>TT BAR: <span class='"+tickerColor("ttt",goldTT)+"'>"+goldTT.toFixed(2)+"</span></span>";
+
+document.getElementById("ticker").innerHTML = tickerText + tickerText;
+}
+    function updateBoard(gold,silver,usdinr){
+    let spread = 0.5
+    let bid = gold - spread
+    let ask = gold + spread
+    /* CARD VALUES */
+    set("goldBid",bid)
+    set("goldAsk",ask)
+    set("usdAsk",usdinr)
+    updateHigh("goldBidHigh",bid)
+    updateHigh("goldAskHigh",ask)
+    updateHigh("usdHigh",usdinr)
+    /* TABLE CALCULATION */
+    let goldGram = (gold * usdinr) / 31.1035
+    let gold1g = goldGram/25
+    let gold995 = gold1g * 995
+    let gold9999 = gold1g * 999
+    let goldTT = gold1g * 116.5
+
+    updateTicker(gold,silver,usdinr,gold1g,gold995,gold9999,goldTT);
+
+    function tickerColor(id,val){
+let cls=""
+if(prev[id]){
+if(val>prev[id]) cls="price-up"
+else if(val<prev[id]) cls="price-down"
+}
+prev[id]=val
+return cls
+}
+let tickerText=
+"<span class='"+tickerColor("tgold",gold)+"'>GOLD: "+gold.toFixed(2)+"</span>"+
+"<span class='"+tickerColor("tsilver",silver)+"'>SILVER: "+silver.toFixed(2)+"</span>"+
+"<span class='"+tickerColor("tusd",usdinr)+"'>USDINR: "+usdinr.toFixed(2)+"</span>"+
+"<span class='"+tickerColor("t1g",gold1g)+"'>GOLD 1GM: "+gold1g.toFixed(0)+"</span>"+
+"<span class='"+tickerColor("t995",gold995)+"'>GOLD 995: "+gold995.toFixed(0)+"</span>"+
+"<span class='"+tickerColor("t9999",gold9999)+"'>GOLD 9999: "+gold9999.toFixed(0)+"</span>"+
+"<span class='"+tickerColor("ttt",goldTT)+"'>TT BAR: "+goldTT.toFixed(0)+"</span>";
+document.getElementById("ticker").innerHTML = tickerText + tickerText;
+    updateTable("silverOz",silver)
+    updateTable("gold1g",gold1g)
+    updateTable("gold995",gold995)
+    updateTable("gold9999",gold9999)
+    updateTable("goldTT",goldTT)
+    }
+    function set(id,val){
+    let el=document.getElementById(id)
+    if(!el) return
+    if(prev[id]){
+    if(val>prev[id]) el.style.color="green"
+    if(val<prev[id]) el.style.color="red"
+    }
+    prev[id]=val
+    el.innerHTML=val.toFixed(2)
+    }
+    /* CARD HIGH ONLY */
+    function updateHigh(id,val){
+    let el=document.getElementById(id)
+    if(!el) return
+    if(!highs[id] || val>highs[id]) highs[id]=val
+    el.innerHTML="High: "+highs[id].toFixed(2)
+    }
+    /* TABLE HIGH + LOW */
+    function updateTable(id,val){
+set(id,val)
+/* HIGH */
+if(!highs[id] || val>highs[id]) highs[id]=val
+/* LOW */
+if(!lows[id] || val<lows[id]) lows[id]=val
+let hl=document.getElementById(id+"HL")
+if(hl){
+hl.innerHTML="H: "+highs[id].toFixed(2)+" | L: "+lows[id].toFixed(2)
+}
+}
+    getData()
+    document.getElementById("marketStatus").innerHTML="🟢 MARKET LIVE";
+document.getElementById("marketStatus").className="market-open";
+    setInterval(simulateMove,700);
+    function simulateMove(){
+let ids = ["goldBid","goldAsk","usdAsk","silverOz","gold1g","gold995","gold9999","goldTT"];
+ids.forEach(id=>{
+if(prev[id]){
+let move = (Math.random()-0.5) * (prev[id] * 0.0002);
+let newPrice = prev[id] + move;
+/* PRICE COLOR */
+let el = document.getElementById(id);
+if(newPrice > prev[id]){
+el.style.color = "#00ff7f";
+}
+else{
+el.style.color = "#ff4040";
+}
+/* UPDATE VALUE */
+prev[id] = newPrice;
+el.innerHTML = newPrice.toFixed(2);
+/* UPDATE HIGH LOW */
+if(!highs[id] || newPrice > highs[id]) highs[id] = newPrice;
+if(!lows[id] || newPrice < lows[id]) lows[id] = newPrice;
+let hl = document.getElementById(id+"HL");
+if(hl){
+hl.innerHTML = "H: "+highs[id].toFixed(2)+" | L: "+lows[id].toFixed(2);
+}
+}
+});
+updateTicker(
+prev.goldBid,
+prev.silverOz,
+prev.usdAsk,
+prev.gold1g,
+prev.gold995,
+prev.gold9999,
+prev.goldTT
+);
+
+}
+setInterval(load,1000);
+    </script>
+</body>
+</html>
